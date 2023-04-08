@@ -1,0 +1,20 @@
+# fly.toml app configuration file generated for fastcampus-fe-project-api on 2023-04-27T07:07:05+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "fastcampus-fe-project-api"
+primary_region = "nrt"
+
+[http_service]
+  internal_port = 4000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+
+[checks]
+  [checks.alive]
+    type = "tcp"
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "5s"
